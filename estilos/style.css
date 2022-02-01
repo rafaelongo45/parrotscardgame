@@ -1,0 +1,105 @@
+@media (max-width: 629px){
+    *{
+        box-sizing: border-box;
+    }
+    
+    body{
+        background-color: #EEF9BF;  
+    }
+    
+    /* Nome do jogo */
+    header{
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        margin: 40px auto;
+    }
+    
+    header h1{
+        font-family: 'Roboto', sans-serif;
+        max-width: 312px;
+        font-size: 36px;
+        text-align: center;
+        color: #75B79E;
+    }
+    
+    /* Onde o jogo rola */
+    
+    main{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        margin: auto;
+    }
+    
+    .container{
+        min-width: 117px;
+        min-height: 146px;
+        background: #A7E9AF;
+        margin: 34px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #99CEA8;
+        border-radius: 5px;
+    }
+    
+    .container img{
+        max-width: 100px;
+        max-height: 100px;
+    }
+    
+}
+
+@media (min-width: 630px){
+    *{
+        box-sizing: border-box;
+    }
+    
+    body{
+        background-color: #EEF9BF;  
+    }
+    
+    /* Nome do jogo */
+    header{
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        margin: 40px 0;
+    }
+    
+    header h1{
+        font-family: 'Roboto', sans-serif;
+        font-size: 56px;
+        color: #75B79E;
+    }
+    
+    /* Onde o jogo rola */
+    
+    main{
+        width: 90%;
+        display:flex;
+        flex-wrap: wrap;
+        align-items: center;
+        margin: auto;
+    }
+    
+    .container{
+        min-width: 117px;
+        min-height: 146px;
+        background: #A7E9AF;
+        margin: 34px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid #99CEA8;
+        border-radius: 5px;
+    }
+    
+    .container img{
+        max-width: 100px;
+        max-height: 100px;
+    }
+    
+}
