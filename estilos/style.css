@@ -1,4 +1,4 @@
-@media (max-width: 629px){
+@media (max-width: 500px){
     *{
         box-sizing: border-box;
     }
@@ -52,7 +52,7 @@
     
 }
 
-@media (min-width: 630px){
+@media (min-width: 501px){
     *{
         box-sizing: border-box;
     }
@@ -73,6 +73,7 @@
         font-family: 'Roboto', sans-serif;
         font-size: 56px;
         color: #75B79E;
+        text-align: center;
     }
     
     /* Onde o jogo rola */
