@@ -91,10 +91,10 @@
         justify-content: center;
         margin: auto;
     }
-    
-    .container{
-        min-width: 117px;
-        min-height: 146px;
+
+    section{
+        width: 117px;
+        height: 146px;
         background: #A7E9AF;
         margin: 34px;
         display:flex;
@@ -102,6 +102,14 @@
         justify-content: center;
         border: 1px solid #99CEA8;
         border-radius: 5px;
+    }
+    
+    .container{
+        min-width: 117px;
+        min-height: 146px;
+        display:flex;
+        align-items: center;
+        justify-content: center;
     }
 
     .nao-aparece{

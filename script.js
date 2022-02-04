@@ -2,6 +2,8 @@ let lista = [];
 let qtdCartas = null;
 let nomeGifs = ['bobrossparrot','explodyparrot','fiestaparrot','metalparrot','revertitparrot','tripletsparrot','unicornparrot'];
 let listaCartas = [];
+let clique = 0;
+let primeiraCartaHTML = null;
 
 nomeGifs.sort(comparador);
 
@@ -39,6 +41,30 @@ function clicarCarta(elemento){
     let divFront = elemento.querySelector('.front');  
     divBack.classList.remove('nao-aparece');
     divFront.classList.add('nao-aparece');
+    clique = clique + 1;
+
+    if (clique === 1){
+        primeiraCartaHTML = elemento.innerHTML;
+    }
+    if (clique === 2){
+        if(primeiraCartaHTML === elemento.innerHTML){
+            clique = 0;
+        }else{
+            setTimeout(desviraCartas, 1000);
+            clique = 0;
+        }
+    }
+}
+
+function desviraCartas(){
+    const frentes = document.querySelectorAll('.front')
+    const costas = document.querySelectorAll('.back')
+    for (let i = 0; i < listaCartas.length; i++){
+        if (frentes[i].classList.contains('nao-aparece')){
+            frentes[i].classList.remove('nao-aparece');
+            costas[i].classList.add('nao-aparece');
+        }
+    }
 }
 
 function comparador() { 
