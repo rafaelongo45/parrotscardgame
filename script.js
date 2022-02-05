@@ -12,21 +12,24 @@ let segundaCartaBack = null;
 let jogadas = 0;
 let travaTudo = false;
 let verificaFront = null;
+let reiniciaJogo = null;
+let relogio = 0;
+let intervalo = null;
+let relogioClasse = null;
 
 nomeGifs.sort(comparador);
-
 
 function checaQuantidade() {
     for (let i = 4; i <= 14; i += 2) {
         lista.push(i);
     }
 
-    qtdCartas = prompt("quantasccsatas?");
+    qtdCartas = prompt("Com quantas cartas quer jogar? (De 4 a 14, apenas números pares)");
     qtdCartas = parseInt(qtdCartas);
 
 
     while (lista.includes(qtdCartas) == false) {
-        qtdCartas = prompt("cartas?");
+        qtdCartas = prompt("Com quantas cartas quer jogar? (De 4 a 14, apenas números pares)");
         qtdCartas = parseInt(qtdCartas);
     }
 
@@ -43,6 +46,8 @@ function adicionaCartas() {
     for (let i = 0; i < listaCartas.length; i++) {
         main.innerHTML = main.innerHTML + listaCartas[i];
     }
+
+    main.innerHTML = main.innerHTML + "<span class = 'relogio'>0</span>";
 }
 
 function clicarCarta(elemento) {
@@ -52,6 +57,10 @@ function clicarCarta(elemento) {
     if (elemento === sectionEscolhida) {
         return;
     }    
+
+    if (clique === 0){
+        intervalo = setInterval(timer, 1000);
+    }
     let divBack = elemento.querySelector('.back');
     let divFront = elemento.querySelector('.front');
     sectionEscolhida = elemento;
@@ -61,7 +70,7 @@ function clicarCarta(elemento) {
     divFront.classList.add('nao-aparece');
     clique = clique + 1;
     jogadas = jogadas + 1;
-
+    
     if (clique === 1) {
         primeiraCartaHTML = elemento.innerHTML;
         primeiraCartaFront = divFront;
@@ -71,22 +80,28 @@ function clicarCarta(elemento) {
         if (primeiraCartaHTML === elemento.innerHTML) {
             primeiraCartaFront.remove();
             segundaCartaFront.remove();
-            clique = 0;
+            clique = null;
             setTimeout(verificarGanhou, 500);
         } else {
             travaTudo = true;
             setTimeout(desviraCartas, 1000);
-            clique = 0;
+            clique = null;
         }
     }
 }
 
-
 function verificarGanhou() {
     verificaFront = document.querySelectorAll('.front');
     if (verificaFront.length === 0) {
-        alert(`Você ganhou em ${jogadas} jogadas`)
-        return;
+        clearInterval(intervalo);
+        alert(`Você ganhou em ${jogadas} jogadas e em ${relogio} segundos`)
+        reiniciaJogo = prompt('Quer jogar novamente? s ou n');
+    }
+
+    if (reiniciaJogo === 's'){
+        window.location.reload();
+    }else if(reiniciaJogo === 'n'){
+        window.location = "https://www.driven.com.br/"
     }
 }
 
@@ -110,6 +125,12 @@ function resetarJogo() {
 
 function comparador() {
     return Math.random() - 0.5;
+}
+
+function timer(){
+    relogioClasse = document.querySelector('.relogio');
+    relogio = relogio + 1;
+    relogioClasse.innerHTML = relogio;
 }
 
 checaQuantidade();
