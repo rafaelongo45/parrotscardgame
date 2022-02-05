@@ -66,13 +66,13 @@ function clicarCarta(elemento) {
         primeiraCartaHTML = elemento.innerHTML;
         primeiraCartaFront = divFront;
         primeiraCartaBack = divBack;
-        setTimeout(verificarGanhou, 500);
     }
     else if (clique === 2) {
         if (primeiraCartaHTML === elemento.innerHTML) {
             primeiraCartaFront.remove();
             segundaCartaFront.remove();
             clique = 0;
+            setTimeout(verificarGanhou, 500);
         } else {
             travaTudo = true;
             setTimeout(desviraCartas, 1000);
