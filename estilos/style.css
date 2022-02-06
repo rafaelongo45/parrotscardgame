@@ -7,7 +7,6 @@
         background-color: #EEF9BF;  
     }
     
-    /* Nome do jogo */
     header{
         display:flex;
         flex-wrap: wrap;
@@ -20,12 +19,10 @@
         font-family: 'Roboto', sans-serif;
         max-width: 312px;
         font-size: 36px;
-        text-align: center;
         color: #75B79E;
+        text-align: center;
     }
-    
-    /* Onde o jogo rola */
-    
+        
     main{
         display:flex;
         flex-direction: column;
@@ -64,7 +61,7 @@
         color: red;
     }
     
-    
+
 }
 
 @media (min-width: 501px){
@@ -76,12 +73,8 @@
         background-color: #EEF9BF;  
     }
     
-    /* Nome do jogo */
     header{
-        display:flex;
-        align-items: center;
-        justify-content: center;
-        margin: 40px 0;
+        margin: 40px;
     }
     
     header h1{
@@ -90,11 +83,8 @@
         color: #75B79E;
         text-align: center;
     }
-    
-    /* Onde o jogo rola */
-    
+        
     main{
-        width: 90%;
         display:flex;
         flex-wrap: wrap;
         align-items: center;
@@ -121,6 +111,7 @@
         align-items: center;
         justify-content: center;
     }
+    
     .nao-aparece{
         display: none;
     }
